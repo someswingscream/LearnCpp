@@ -12,6 +12,7 @@ using namespace std;
 int main()
 {
 	//创建变量：数据类型 变量名 = 变量值;
+	//变量不使用关键字；
 
 	int a = 10;
 
