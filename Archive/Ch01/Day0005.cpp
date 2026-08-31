@@ -3,7 +3,7 @@
 using namespace std;
 int main()
 {
-	// 选择结构switch语句：执行效率可比if语句高，表达式只能是整型、字符型，switch作为多分支不推荐将bool型作为整型使用；
+// 选择结构switch语句：执行效率可比if语句高，表达式只能是整型、字符型，switch作为多分支不推荐将bool型作为整型使用；
 	/*语法：
 		switch(表达式)
 		{
@@ -21,6 +21,7 @@ int main()
 			break;
 		}
 	*/
+
 	// 分段判断输入：10输出Perfect，9输出Good，其余输出Bad；
 	int num1 = 0;
 	cout << "switch分段判断测试，输入整数：" << '\n';
@@ -38,7 +39,7 @@ int main()
 		break;
 	}
 
-	// 循环结构while语句：当表达式结果为真值时循环执行语句，当表达式结果为假值时停止；
+// 循环结构while语句：当表达式结果为真值时循环执行语句，当表达式结果为假值时停止；
 	/*语法：
 		while(表达式)
 		{
@@ -61,6 +62,7 @@ int main()
 	int tries = 1;
 	int guess_num = 0;
 	cout << "猜一个1~100的数字" << '\n';
+
 	// 用bool型控制while循环结束；
 	bool flag = true;
 	while (flag)
