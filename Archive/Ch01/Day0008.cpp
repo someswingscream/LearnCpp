@@ -1,4 +1,4 @@
-// Day0007,一维数组声明
+// Day0008,一维数组声明
 #include <iostream>
 #include <string>
 using namespace std;
