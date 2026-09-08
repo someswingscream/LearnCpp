@@ -1,4 +1,4 @@
-//Day0004,程序流程结构_选择结构if语句，三目运算符
+// Day0004,程序流程结构_选择结构if语句，三目运算符
 #include <iostream>
 #include <string>
 using namespace std;

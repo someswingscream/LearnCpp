@@ -1,4 +1,4 @@
-//day0001，注释、变量、常量
+// Day0001，注释、变量、常量
 # include <iostream>
 using namespace std;
 /*

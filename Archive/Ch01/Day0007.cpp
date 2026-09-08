@@ -1,4 +1,4 @@
-//Day0007,forÇ¶Ì×Ñ­»·Á·Ï°£¬gotoÓï¾ä
+// Day0007,forÇ¶Ì×Ñ­»·Á·Ï°£¬gotoÓï¾ä
 #include <iostream>
 using namespace std;
 int main()
