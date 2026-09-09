@@ -1,4 +1,4 @@
-// Day0010，二维数组定义及多人总成绩打印练习,函数声明
+// Day0010，二维数组定义及多人总成绩打印练习,函数声明;
 #include <iostream>
 #include <string>
 
