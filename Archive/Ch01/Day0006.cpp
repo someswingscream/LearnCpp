@@ -1,7 +1,9 @@
 // Day0006,循环结构do-while语句，循环结构for语句，
 #include <iostream>
 #include <string>
+
 using namespace std;
+
 int main()
 {
 	// do-while语句：先执行依次语句后，判断是否执行while循环；

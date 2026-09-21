@@ -1,7 +1,9 @@
 // Day0003，布尔型，cin，运算符
 #include <iostream>
 #include <string>
+
 using namespace std;
+
 int main()
 {
 // 布尔型：用false（0）和true（1）来存储数据；
@@ -16,7 +18,7 @@ int main()
 	string str1 = "example2";
 	cout << "为str1赋值：\n";
 	cin >> str1;
-	cout << "赋值后sstr1等于：" << str1 << "\n";
+	cout << "赋值后str1等于：" << str1 << "\n";
 
 //	运算符：可分为算术、赋值、比较、逻辑；
 	// 算术运算符：+加 -减 *乘 /除 %取余 ++--前后置递增减

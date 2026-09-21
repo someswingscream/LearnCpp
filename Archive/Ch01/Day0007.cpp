@@ -1,6 +1,8 @@
 // Day0007,for嵌套循环练习，goto语句
 #include <iostream>
+
 using namespace std;
+
 int main()
 {
 	// for嵌套循环训练，打印九九乘法表
@@ -73,7 +75,7 @@ int main()
 	cout << '\n' << "goto实现循环测试：" << '\n';
 
 	int num2 = 1;
-FLAG:// 标记无需像变量一样事先声明；
+FLAG:// 标记无需事先定义；
 	if (num2 <= 100)
 	{
 		cout << num2 << '\n';

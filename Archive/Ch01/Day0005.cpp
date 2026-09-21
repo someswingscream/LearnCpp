@@ -1,6 +1,8 @@
 // Day0005,程序流程结构_选择结构switch语句，循环结构while语句
 #include <iostream>
+
 using namespace std;
+
 int main()
 {
 // 选择结构switch语句：执行效率可比if语句高，表达式只能是整型、字符型，switch作为多分支不推荐将bool型作为整型使用；

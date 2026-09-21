@@ -12,20 +12,19 @@ int add(int num1, int num2)
 	return sum;
 }
 // 创建一个交换cin输入两数的函数;
-void swap(int num3, int num4)
+void inputswap()// 无需传参时用void命名函数;
 {
 	int cin_num1 = 0;
 	int cin_num2 = 0;
 
-	cin >> cin_num1;
-	cin >> cin_num2;
+	cout << "请输入两个整数:" << '\n';
+	cin >> cin_num1 >> cin_num2;
 
 	cout << "交换前:" << '\n';
 	cout << "cin_num1为:" << cin_num1 << '\n';
-	cout << "cin_num12为:" << cin_num2 << '\n';
+	cout << "cin_num2为:" << cin_num2 << '\n';
 
-	int temp = 0;
-	temp = cin_num1;
+	int temp = cin_num1;
 	cin_num1 = cin_num2;
 	cin_num2 = temp;
 
@@ -41,7 +40,7 @@ int main()
 		// 定义方式一：数据类型 二维数组名称[行数][列数] = {{数据1,数据2,数据3},{数据4,数据5,数据6}};
 	cout << "二维数组打印测试:" << '\n';
 
-	int arr1[2][3] = { { 1,2,3}, {4,5,6} };// 这样声明二维数组更加直观,首选;
+	int arr1[2][3] = { { 1,2,3}, {4,5,6} };// 这样定义二维数组更加直观,首选;
 
 	for (int i = 0; i < 2; ++i)
 	{
@@ -114,8 +113,7 @@ int main()
 
 	// 调用swap函数;
 	cout << '\n' << "调用swap函数对换cin输入测试:" << '\n';
-
-
+	inputswap();// 调用函数;
 
 	cout << "测试结束" << '\n';
 
