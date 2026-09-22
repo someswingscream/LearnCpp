@@ -1,10 +1,10 @@
-//Day0011,常见函数样式,函数的声明;
+// Day0011,常见函数样式,函数的声明;
 #include<iostream>
 #include<string>
 
 using namespace std;
 
-//简单值传递验证形参改变不影响实参;
+// 简单值传递验证形参改变不影响实参;
 	// void swap(int num1 = 10, int num2 = 20,int temp)
 	// 错误示例:形参必须从左到右连续设置,某个参数有默认值其后所有参数都必须有默认值;
 	// 调用时形参和实参个数需匹配;

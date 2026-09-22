@@ -1,4 +1,4 @@
-// Day0009,一维数组逆序及冒泡排序，变量作用域
+// Day0009,一维数组逆序及冒泡排序，变量作用域;
 #include <iostream>
 #include <string>
 

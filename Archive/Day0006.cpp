@@ -1,4 +1,4 @@
-// Day0006,循环结构do-while语句，循环结构for语句，
+// Day0006,循环结构do-while语句，循环结构for语句;
 #include <iostream>
 #include <string>
 

@@ -20,16 +20,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="SortTest.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="SortTest.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{bf518f77-6c0f-4a70-97ab-0848e678862f}</ProjectGuid>
-    <RootNamespace>Ch01Fundamentals</RootNamespace>
+    <ProjectGuid>{869e688a-2acb-47f5-8bf9-dcefd341dd87}</ProjectGuid>
+    <RootNamespace>Practice</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

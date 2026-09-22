@@ -1,30 +1,30 @@
-// Day0005,程序流程结构_选择结构switch语句，循环结构while语句
+// Day0005,程序流程结构_选择结构switch语句，循环结构while语句;
 #include <iostream>
 
 using namespace std;
 
 int main()
 {
-// 选择结构switch语句：执行效率可比if语句高，表达式只能是整型、字符型，switch作为多分支不推荐将bool型作为整型使用；
-	/*语法：
-		switch(表达式)
-		{
-		case 结果1:
-			执行结果1的语句;
-			break;
-		case 结果2:
-			执行结果2的语句;
-			break;
-		case 结果3:
-			执行结果3的语句;
-			break;
-		default:
-			执行不满足所有结果的语句;
-			break;
-		}
-	*/
+	// 选择结构switch语句：执行效率可比if语句高，表达式只能是整型、字符型，switch作为多分支不推荐将bool型作为整型使用；
+		/*语法：
+			switch(表达式)
+			{
+			case 结果1:
+				执行结果1的语句;
+				break;
+			case 结果2:
+				执行结果2的语句;
+				break;
+			case 结果3:
+				执行结果3的语句;
+				break;
+			default:
+				执行不满足所有结果的语句;
+				break;
+			}
+		*/
 
-	// 分段判断输入：10输出Perfect，9输出Good，其余输出Bad；
+		// 分段判断输入：10输出Perfect，9输出Good，其余输出Bad；
 	int num1 = 0;
 	cout << "switch分段判断测试，输入整数：" << '\n';
 	cin >> num1;
@@ -41,15 +41,15 @@ int main()
 		break;
 	}
 
-// 循环结构while语句：当表达式结果为真值时循环执行语句，当表达式结果为假值时停止；
-	/*语法：
-		while(表达式)
-		{
-			循环执行的语句;
-		}
-	*/
+	// 循环结构while语句：当表达式结果为真值时循环执行语句，当表达式结果为假值时停止；
+		/*语法：
+			while(表达式)
+			{
+				循环执行的语句;
+			}
+		*/
 
-	// while循环打印1~9；
+		// while循环打印1~9；
 	int num2 = 1;
 	cout << "while循环测试:" << '\n';
 	while (num2 < 10)

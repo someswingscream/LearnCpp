@@ -1,4 +1,4 @@
-#include "sorttest.h"// 包含自己的头文件;
+#include "SortTest.h"// 包含自己的头文件;
 #include <iostream>// 包含本文件所需;
 
 using namespace std;// 待改进;
@@ -31,12 +31,11 @@ void bubbleSort(int arr1[], int n)
 		{
 			break;
 		}
-
-		// 打印冒泡排序后的数据;
-		cout << '\n' << "排序后数据升序为:";
-		for (int i = 0; i < n; ++i)
-		{
-			cout << arr1[i] << ' ';
-		}
+	}
+	// 打印冒泡排序后的数据;
+	cout << '\n' << "排序后数据升序为:";
+	for (int i = 0; i < n; ++i)
+	{
+		cout << arr1[i] << ' ';
 	}
 }
