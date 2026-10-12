@@ -60,6 +60,9 @@
     <ClCompile Include="..\Practice\Day0012_main.cpp">
       <Filter>PracticeArchive\Day0012</Filter>
     </ClCompile>
+    <ClCompile Include="Day0013.cpp">
+      <Filter>PracticeArchive</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Practice\Day0012_SortTest.h">

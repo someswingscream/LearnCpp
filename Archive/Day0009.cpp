@@ -99,7 +99,7 @@ int main()
 				arr3[num5 + 1] = temp3;
 
 				swapped = true;
-				++tries;
+				++tries3;
 			}
 		}
 		if (!swapped)break;
@@ -110,7 +110,7 @@ int main()
 	{
 		cout << arr3[num6] << '\n';
 	}
-	cout << "此arr3数组一共进行了" << tries << "次排序。" << '\n';
+	cout << "此arr3数组一共进行了" << tries3 << "次排序。" << '\n';
 
 	cout << "测试结束" << '\n';
 
