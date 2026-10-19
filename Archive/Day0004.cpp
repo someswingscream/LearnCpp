@@ -104,10 +104,11 @@ int main()
 	int num6 = 0;
 	int num7 = 0;
 	int num8 = 0;
-	cout << "三木运算符比较后再赋值，依次输入两个不同的整数：" << '\n';
+	cout << "三目运算符比较后再赋值，依次输入两个不同的整数：" << '\n';
 	cin >> num6;
 	cin >> num7;
-	(num8 = (num6 > num7 ? num6 : num7)) = 70;// 右=位置可以为返回表达式的变量进行再赋值
+	cout << "其中数值较大的为：" << (num6 > num7 ? num6 : num7) << '\n';
+	num8 = ((num6 > num7 ? num6 : num7) = 70);// 右=位置可以为返回表达式的变量进行再赋值
 	cout << "将数值较大的再赋值为：" << num8 << '\n';
 
 	system("pause");

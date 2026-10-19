@@ -12,6 +12,7 @@ struct Contact
 	string person_name = "未命名";
 	int person_sex = 0;// 1男2女
 	int person_age = 0;
+	// 单字汉字占多个字节，同样需要用""
 	string person_phone = "空";
 	string address = "空";
 };
@@ -49,8 +50,7 @@ void LaunchContactManager(AddressBook* address_book)
 		int user_select = 0;
 		cin >> user_select;
 		// 用于判断用户输入是否合法
-		int cin_arr[7] = { 0,1,2,3,4,5,6 };
-		if (user_select != cin_arr[user_select])
+		if (user_select < 0 || user_select > 6)
 		{
 			cout << "输入有误，请重新输入" << '\n';
 		}
@@ -118,7 +118,7 @@ void AddContact(AddressBook* address_book)
 		while (true)
 		{
 			cin >> cin_sex;
-			if (cin_sex == 1 || cin_sex == 0)
+			if (cin_sex == 1 || cin_sex == 2)
 			{
 				address_book->contacts[address_book->contacts_num].person_sex = cin_sex;
 				break;
@@ -163,7 +163,7 @@ void ShowContact(AddressBook* address_book)
 		for (int i = 0; i < address_book->contacts_num; ++i)
 		{
 			cout << "姓名：" << address_book->contacts[i].person_name << '\t';
-			cout << "性别：" << (address_book->contacts[i].person_sex == 1 ? '男' : '女') << '\t';
+			cout << "性别：" << (address_book->contacts[i].person_sex == 1 ? "男" : "女") << '\t';
 			cout << "年龄：" << address_book->contacts[i].person_age << '\t';
 			cout << "电话号码：" << address_book->contacts[i].person_phone << '\t';
 			cout << "地址：" << address_book->contacts[i].address << '\n';
@@ -222,7 +222,7 @@ void FindContact(AddressBook* address_book)
 	{
 		cout << "找到联系人信息如下：" << '\n';
 		cout << "姓名：" << address_book->contacts[contact_idx].person_name << '\t';
-		cout << "性别：" << (address_book->contacts[contact_idx].person_sex == 1 ? '男' : '女') << '\t';
+		cout << "性别：" << (address_book->contacts[contact_idx].person_sex == 1 ? "男" : "女") << '\t';
 		cout << "年龄：" << address_book->contacts[contact_idx].person_age << '\t';
 		cout << "电话号码：" << address_book->contacts[contact_idx].person_phone << '\t';
 		cout << "地址：" << address_book->contacts[contact_idx].address << '\n';
@@ -243,7 +243,7 @@ void EditContact(AddressBook* address_book)
 		// 显示联系人方便用户参考用于修改信息
 		cout << "找到联系人信息如下：" << '\n';
 		cout << "姓名：" << address_book->contacts[contact_idx].person_name << '\t';
-		cout << "性别：" << (address_book->contacts[contact_idx].person_sex == 1 ? '男' : '女') << '\t';
+		cout << "性别：" << (address_book->contacts[contact_idx].person_sex == 1 ? "男" : "女") << '\t';
 		cout << "年龄：" << address_book->contacts[contact_idx].person_age << '\t';
 		cout << "电话号码：" << address_book->contacts[contact_idx].person_phone << '\t';
 		cout << "地址：" << address_book->contacts[contact_idx].address << '\n';
