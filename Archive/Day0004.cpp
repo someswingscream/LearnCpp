@@ -111,8 +111,6 @@ int main()
 	num8 = ((num6 > num7 ? num6 : num7) = 70);// 右=位置可以为返回表达式的变量进行再赋值
 	cout << "将数值较大的再赋值为：" << num8 << '\n';
 
-	system("pause");
-
 	return 0;
 
 }

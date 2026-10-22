@@ -32,7 +32,7 @@ int main()
 	{
 	case 10:// 注意有":" 
 		cout << "测试结束，Perfect" << '\n';
-		break;// 不加break则会继续选择符合条件的语句执行
+		break;// 不加break会发生贯穿（fall through）：执行完当前 case 后不再判断任何条件，顺着往下把后面 case 的语句全执行一遍，直到遇见 break
 	case 9:
 		cout << "测试结束，Good" << '\n';
 		break;
@@ -86,8 +86,6 @@ int main()
 		}
 		++tries;// 每次while循环结束后递增+1，用于记录猜数次数
 	}
-
-	system("pause");
 
 	return 0;
 }

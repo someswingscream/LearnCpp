@@ -39,7 +39,5 @@ int main()
 
 	cout << "short所占用的内存空间大小为：" << sizeof(num1) << endl;
 
-	system("pause");
-
 	return 0;
 }

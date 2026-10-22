@@ -53,7 +53,5 @@ int main()
 	string cpp_str = "niania";// 刚需添加 #include <string>的头文件
 	cout << c_str << cpp_str;
 
-	system("pause");
-
 	return 0;
 }

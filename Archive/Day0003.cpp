@@ -53,7 +53,5 @@ int main()
 	int num7 = 0;
 	cout << "||运算测试：" << (num6 || num7) << '\n';//num6与num7不同假，运算结果为1
 
-	system("pause");
-
 	return 0;
 }

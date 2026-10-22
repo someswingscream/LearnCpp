@@ -8,16 +8,16 @@ using namespace std;
 
 int main()
 {
-    // ========== 窄化概念 ==========
-        // 数据类型值范围及窄化转换
+// ========== 窄化概念 ==========
+    // 数据类型值范围及窄化转换
     {
         // 常见数据类型值范围
         // lowest()：最小值；max()：最大值（C++11 起对整数浮点都适用）
         // 获取值范围目前超纲内容仅认识
         cout << "常见数据值范围测试：" << '\n';
 
-        cout << "bool:    [" << (int)numeric_limits<bool>::lowest() << ", " << (int)numeric_limits<bool>::max() << "]\n";
-        cout << "char:    [" << (int)numeric_limits<char>::lowest() << ", " << (int)numeric_limits<char>::max() << "]\n";
+        cout << "bool:    [" << static_cast<int>(numeric_limits<bool>::lowest()) << ", " << static_cast<int>(numeric_limits<bool>::max()) << "]\n";
+        cout << "char:    [" << static_cast<int>(numeric_limits<char>::lowest()) << ", " << static_cast<int>(numeric_limits<char>::max()) << "]\n";
         cout << "short:   [" << numeric_limits<short>::lowest() << ", " << numeric_limits<short>::max() << "]\n";
         cout << "int:     [" << numeric_limits<int>::lowest() << ", " << numeric_limits<int>::max() << "]\n";
         cout << "long long: [" << numeric_limits<long long>::lowest() << ", " << numeric_limits<long long>::max() << "]\n";
@@ -36,7 +36,7 @@ int main()
         cout << "将浮点数 d=3.99窄化转化为整型int i后结果为:" << i << '\n';
 
         int big = 300;
-        char c = big; // 300 超出 char 范围，截断成 44（'，' 字符）
+        char c = big; // 300 超出 char 范围，截断成 44（',' 字符）
         cout << "将整型int big=300窄化转化为字符串char c后结果为：" << c << '\n';
 
         int n = 100000000;
@@ -46,12 +46,12 @@ int main()
         cout << "测试结束" << '\n' << '\n';
     }
 
-    // ========== {}花括号初始化优点 ===========
-        // {}初始化
+// ========== {}花括号初始化优点 ===========
+    // {}初始化
     {
         // 花括号{}初始化变量时静态检查，会将窄化当为编译错误指出
         // 常见数据类型{}初始化
-        // 结构体{}会检查成员列表是否按序逐个填入，不允许跳过成员进行赋值
+        // 结构体{}会检查成员列表是否按序逐个填入，不允许跳过中间成员进行赋值
         int      a1{ 42 };
         bool     b1{ true };
         char     c1{ 'x' };
@@ -74,13 +74,24 @@ int main()
         // int i{0}后再次用i{19};进行赋值还是会被视为声明变量但缺少类型声明故会报错，需i = {19};
         // 用i = {19};来再赋值时花括号仍具有静态检查作用
         // 花括号仅能负责在运行前经行检查，在运行后出现新值超出源值数据类型的值范围无法避免
+        // {}在编译期拦截窄化转换，判定分两种：
+            // ① 源是常量表达式（编译期能确定值）：检查具体值。
+            //    整型之间：装得下方行（char c{100}✓），装不下拦截（char c{300}✗）；
+            //    浮点转整型：一律拦截，哪怕值恰好是整数（int x{3.0}✗）；
+            //    整型转浮点：值能被精确表示才放行（float f{3}✓）
+            // ② 源是普通变量：不看当前值，只看类型——目标类型装不下源类型的全部可能值就拦截
+            // 核心思想：宁可错杀(例如3.0 没小数也拦)，不可放过导致运行期悄悄丢数据
+
+        // 例如以下内容，浮点转整型
+        double d{};
+        int x{ d };
 
         // 数据类型进行转换是具有潜在危险的行为，需要特别小心
         // 故推荐使用static_cast<目标数据类型>(表达式)这样较为显眼的方法，再次声明该方法也会对数据进行截断      
     }
 
-    // ========== vector数组 ==========
-        // vector初始化
+// ========== vector数组 ==========
+    // vector初始化
     {
         // vector作为传统数组加强版，需#include <vector>,能动态增删、自动管理数组长度、不退化为指针
         // vector初始化
@@ -130,9 +141,9 @@ int main()
         v3.push_back(20);
         v3.push_back(30);
         cout << "自尾部添加10、20、30后数组长度为：" << v3.size() << ' ' << "当前数组内容为：";
-        for (int i : v3) // 由此可见push_back自尾部添加，数组向左移动
+        for (int i : v3)
         {
-            cout << i << ' ';
+            cout << i << ' '; // 由此可见push_back自尾部添加
         }
         cout << '\n';
 
