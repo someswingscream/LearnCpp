@@ -78,6 +78,9 @@
     <ClCompile Include="Day0018.cpp">
       <Filter>PracticeArchive</Filter>
     </ClCompile>
+    <ClCompile Include="Day0019.cpp">
+      <Filter>PracticeArchive</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Practice\Day0012_SortTest.h">

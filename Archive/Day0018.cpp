@@ -125,21 +125,22 @@ void LaunchAddressBook(AddressBook* address_book)
 void UpdataContactInfo(AddressBook* address_book, int contact_idx)
 {
 	cout << "请输入联系人姓名：" << '\n';
-	cin >> address_book->contacts.at(address_book->contacts.size()).contact_name;
+	cin >> address_book->contacts.at(contact_idx).contact_name;
 	cout << "请输入联系人性别：" << '\n';
-	cin >> address_book->contacts.at(address_book->contacts.size()).contact_sex;
+	cin >> address_book->contacts.at(contact_idx).contact_sex;
 	cout << "请输入联系人年龄：" << '\n';
-	cin >> address_book->contacts.at(address_book->contacts.size()).contact_age;
+	cin >> address_book->contacts.at(contact_idx).contact_age;
 	cout << "请输入联系人电话号码:" << '\n';
-	cin >> address_book->contacts.at(address_book->contacts.size()).contact_phone;
+	cin >> address_book->contacts.at(contact_idx).contact_phone;
 	cout << "请输入联系人地址：" << '\n';
-	cin >> address_book->contacts.at(address_book->contacts.size()).contact_address;
+	cin >> address_book->contacts.at(contact_idx).contact_address;
 }
 
 // 添加联系人函数
 void AddContact(AddressBook* address_book)
 {
-	UpdataContactInfo(address_book, address_book->contacts.size());
+	address_book->contacts.push_back({});
+	UpdataContactInfo(address_book, address_book->contacts.size()-1);
 }
 
 // 遍历单个联系人内成员函数
@@ -172,30 +173,28 @@ void ShowAddressBook(AddressBook* address_book)
 bool IsExist(AddressBook* address_book, string confirm_name)
 {
 	int contact_idx{};
-	for (const Contact& c : address_book->contacts)
+	for (const Contact& contact_idx : address_book->contacts)
 	{
 		if (confirm_name == address_book->contacts.at(contact_idx).contact_name)
 		{
 			return true;
 		}
-		else
-		{
-			return false;
-		}
 	}
+	return false;
 }
 
 // 按输入姓名获取联系人数组下标函数
 int FindByName(AddressBook* address_book, string confirm_name)
 {
 	int contact_idx{};
-	for (const Contact& c : address_book->contacts)
+	for (const Contact& contact_idx : address_book->contacts)
 	{
 		if (confirm_name == address_book->contacts.at(contact_idx).contact_name)
 		{
 			return contact_idx;
 		}
 	}
+	return{};
 }
 
 // 获取用户cin输入的联系人姓名并作为返回值传出
