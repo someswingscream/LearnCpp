@@ -12,7 +12,7 @@ int add(int num1, int num2)
 	return sum;
 }
 // 创建一个交换cin输入两数的函数
-void inputswap()// 无需传参时用void命名函数
+void inputswap()// 无需返回值时选择void类型函数
 {
 	int cin_num1 = 0;
 	int cin_num2 = 0;

@@ -63,8 +63,8 @@ int main()
 		}
 	*/
 	// 多条件以及嵌套if测试：猜固定数字7，两次机会
-	int guess_num = 7;// 固定数字7
-	int cin_num = 0;// 输入数字初始化
+	int guess_num = 7; // 固定数字7
+	int cin_num = 0; // 输入数字初始化
 	cout << "猜一个十以内的整数，两次机会：" << '\n';
 	cin >> cin_num;
 	if (cin_num == guess_num)
@@ -74,7 +74,7 @@ int main()
 	else if (cin_num != guess_num)
 	{
 		cout << "猜错了，再来一次：" << '\n';
-		cin >> cin_num;// 第一次猜错后获取第二次输入
+		cin >> cin_num; // 第一次猜错后获取第二次输入
 		//if嵌套，在第一次猜错的情况下进行第二次判断输入整数是否等于7
 		if (cin_num == guess_num)
 		{
@@ -97,7 +97,7 @@ int main()
 	cin >> num3;
 	cin >> num4;
 	// 当num3大于num4时返回num3，否则返回num4
-	num5 = (num3 > num4 ? num3 : num4);// 三目运算符优先级小于赋值=，左=位置的变量用于接受三目运算符返回值
+	num5 = (num3 > num4 ? num3 : num4); // 三目运算符优先级小于赋值=，左=位置的变量用于接受三目运算符返回值
 	cout << "数值较大的为：" << num5 << '\n';
 
 	// 比较两个输入的整数，将大的整数再赋值
@@ -108,7 +108,7 @@ int main()
 	cin >> num6;
 	cin >> num7;
 	cout << "其中数值较大的为：" << (num6 > num7 ? num6 : num7) << '\n';
-	num8 = ((num6 > num7 ? num6 : num7) = 70);// 右=位置可以为返回表达式的变量进行再赋值
+	num8 = ((num6 > num7 ? num6 : num7) = 70); // 右=位置可以为返回表达式的变量进行再赋值
 	cout << "将数值较大的再赋值为：" << num8 << '\n';
 
 	return 0;
