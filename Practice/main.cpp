@@ -1,4 +1,4 @@
-// Day0021,
+// Day0022,
 #include <iostream>
 #include <string>
 #include <vector>
@@ -7,11 +7,6 @@ using namespace std;
 
 int main()
 {
-
-
-
-
-
 
 
 

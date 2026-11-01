@@ -11,10 +11,11 @@ int main()
 // ========== 窄化概念 ==========
     // 数据类型值范围及窄化转换
     {
+        cout << "常见数据值范围测试：" << '\n';
+
         // 常见数据类型值范围
         // lowest()：最小值；max()：最大值（C++11 起对整数浮点都适用）
         // 获取值范围目前超纲内容仅认识
-        cout << "常见数据值范围测试：" << '\n';
 
         cout << "bool:    [" << static_cast<int>(numeric_limits<bool>::lowest()) << ", " << static_cast<int>(numeric_limits<bool>::max()) << "]\n";
         cout << "char:    [" << static_cast<int>(numeric_limits<char>::lowest()) << ", " << static_cast<int>(numeric_limits<char>::max()) << "]\n";
