@@ -7,6 +7,16 @@ using namespace std;
 
 // ========== 通讯录管理系统优化练习 ==========
 
+// 2026.11.2日再复盘优化
+// 通讯录需求：添加、显示、删除、查找、修改、清空联系人，循环执行直到用户主动选择退出通讯录交互系统
+// ========== 需求实现思路 ==========
+// 重点是根据用户输入获得该联系人在通讯录数组中的下标，此练习仅简单设计根据输入姓名返回下标
+// 其中添加、显示、删除、查找、修改都基于联系人下标进行操作，故最先实现输入检查以及根据输入姓名返回联系人下标
+// ========== 经验总结 ==========
+// 数据流通范围有在程序之间流通(参数、函数内修改、return)和人与程序间流通(cin、cout、会充分利用的数据return)
+// 编写函数时尽量将函数按通道分为两类:只走数据通道的函数和只走交互通道的函数，非必要不用混合通道函数
+// 此举是为了将cin、cout集中在固定的小部分函数内而非分散在四处，即方便整体结构后续拓展，也便于排查错因
+
 // ========== 创建结构体 ==========
 // 创建联系人结构体
 struct Contact
@@ -25,33 +35,8 @@ struct AddressBook
 
 // ========== 函数集中声明区 ==========
 // 提前声明函数方便阅读，说实话从函数职责描述就能看出哪些函数还能进行重复结构优化
-// 负责展示菜单，无传入参数，cout输出菜单列表
-void ShowMenu();
-// 负责启动通讯录管理系统，需传入主函数中通讯录地址，函数内cin获取用户输入，能添加、显示、删除、查找、修改、清空通讯录中联系人
-void LaunchAddressBook(AddressBook* address_book);
-// 负责更新联系人信息，需传入主函数中通讯录地址、LaunchAddressBook函数内联系人待添加位置下标，cin获取用户输入的联系人信息，cout输出提示用户该输入哪些信息
-void UpdataContactInfo(AddressBook* address_book, int contact_idx);
-// 负责向通讯录中添加联系人，需传入主函数中通讯录地址
-void AddContact(AddressBook* address_book);
-// 负责打印单个联系人内成员信息，需传入主函数内通讯录地址、LaunchAddressBook函数内该联系人下标，cout该联系人成员内所有信息
-void PrintContact(AddressBook* address_book, int contact_idx);
-// 负责检查当前通讯录是否为空，并遍历输出当前通讯录，需传入主函数内通讯录地址，为空时cout当前通讯录为空，不为空cout当前通讯录中所有联系人信息
-// 检查是否为空用address_book->contacts.empty()就足够，虽后续还有是否为空检查，但将一行代码且防御性输入检查需求拆分为函数明显不合理
-void ShowAddressBook(AddressBook* address_book);
-// 负责按姓名检查该联系人在通讯录中是否存在，需传入主函数内通讯录地址、LaunchAddressBook函数内cin想查询联系人姓名，return是否存在的布尔值
-bool IsExist(AddressBook* address_book, string confirm_name);
-// 负责按姓名检查该联系人在通讯录中的数组下标，需传入主函数中通讯录地址、LaunchAddressBook函数内cin想查询联系人姓名，return找到的联系人数组下标
-int FindByName(AddressBook* address_book, string confirm_name);
-// 负责获取用户输入的用户名，并作为返回值传出
-string GetUserCin();
-// 负责删除联系人,需传入主函数中通讯录地址、LaunchAddressBook函数内cin想查询联系人姓名,未找到该联系人则cout未找到该联系人，成功删除后cout删除成功
-void DeleteContact(AddressBook* address_book, string confirm_name);
-// 负责查找联系人,需传入主函数中通讯录地址、LaunchAddressBook函数内cin想查询联系人姓名,未找到该联系人则cout未找到该联系人，找到联系人后则cout查找到联系人如下并cout联系人信息
-void FindContact(AddressBook* address_book, string confirm_name);
-// 负责修改联系人,需传入主函数中通讯录地址、LaunchAddressBook函数内cin想查询联系人姓名,未找到该联系人则cout未找到该联系人，找到联系人后则cout查找到联系人如下并修改联系人信息
-void EditContact(AddressBook* address_book, string confirm_name);
-// 负责清空通讯录，需传入主函数中通讯录地址，如果当前通讯录为空则cout当前五联系人，无法清空，否则清空联系人后cout已清空通讯录
-void ClearContacts(AddressBook* address_book);
+// 选项输入检查函数：循环检查用户输入的数字是否非法(目前阶段能力还无法防御输入字符串，暂且忽略)，合法后return整型int
+// 
 
 // ========== 创建函数区 ==========
 // 展示菜单函数
@@ -64,7 +49,6 @@ void ShowMenu()
 	cout << "5.修改联系人" << '\n';
 	cout << "6.清空联系人" << '\n';
 	cout << "0.退出通讯录" << '\n';
-	cout << "请输入数字：" << '\n';
 }
 
 // 通讯录管理系统启动函数
