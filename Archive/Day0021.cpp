@@ -6,7 +6,7 @@
 using namespace std;
 
 // 引用传递修改主函数实参
-// 函数被调用是形参会对实参进行引用，此处int& num_1实际是对实参num_1起了一个一样的别名，若取num_3也是同样效果
+// 函数被调用时形参会对实参进行引用，此处int& num_1实际是对实参num_1起了一个一样的别名，若取num_3也是同样效果
 void DoubleNum(int& num_1)
 {
 	num_1 *= 2;
@@ -92,7 +92,7 @@ int main()
 		num_2 = 49;
 		cout << "函数中用const修饰形参后在主函数中修改num_2值为49后num_2值为:" << num_2 << '\n';
 
-		// 且const和非const两引用绑定同一对象能共存
+		// 且const和非const引用绑定同一对象能共存
 		int num_3{ 345 };
 		ConstPrint(num_3);
 		UnconstPrint(num_3);
