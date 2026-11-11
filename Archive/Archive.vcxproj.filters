@@ -90,18 +90,6 @@
     <ClCompile Include="Day0022.cpp">
       <Filter>PracticeArchive</Filter>
     </ClCompile>
-    <ClCompile Include="Day0023.cpp">
-      <Filter>PracticeArchive</Filter>
-    </ClCompile>
-    <ClCompile Include="Day0024.cpp">
-      <Filter>PracticeArchive</Filter>
-    </ClCompile>
-    <ClCompile Include="Day0025.cpp">
-      <Filter>PracticeArchive</Filter>
-    </ClCompile>
-    <ClCompile Include="Day0026.cpp">
-      <Filter>PracticeArchive</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Practice\Day0012_SortTest.h">

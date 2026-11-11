@@ -5,6 +5,7 @@
 // 智能指针
 #include <memory>
 
+
 using namespace std;
 
 // 返回局部变量指针p的函数
