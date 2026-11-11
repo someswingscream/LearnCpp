@@ -42,6 +42,10 @@
     <ClCompile Include="Day0020.cpp" />
     <ClCompile Include="Day0021.cpp" />
     <ClCompile Include="Day0022.cpp" />
+    <ClCompile Include="Day0023.cpp" />
+    <ClCompile Include="Day0024.cpp" />
+    <ClCompile Include="Day0025.cpp" />
+    <ClCompile Include="Day0026.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Practice\Day0012_SortTest.h" />
