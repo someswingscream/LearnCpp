@@ -34,11 +34,11 @@ public:
 
 	void ThisPtr(int age)
 	{
-		// 若我实例化了一个对象名称为samename_1,并samename.ThisPtr(0),this->指向的对象就是samename_1中的age成员变量
+		// 若实例化了一个对象名称为samename_1,并samename.ThisPtr(0),this->指向的对象就是samename_1中的age成员变量
 		this->age = age;
 	}
 
-	// 此处若不使用引用就会直接调用拷贝函数新实例化一个非samename_1的对象
+	// 此处若不定义一个类引用返回值函数，return时就会直接调用拷贝函数新实例化一个非samename_1的对象
 	SameName& AddAge(const SameName& samename)
 	{
 		this->age += samename.age;
