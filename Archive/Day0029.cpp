@@ -8,8 +8,8 @@ using namespace std;
 // 本身作为其他类Outer成员变量的类，且类Outer是其他类的友元
 class Inner
 {
-	// 类Inner中的友元：
-		// 全局友元函数：
+// 类Inner中的友元：
+	// 全局友元函数：
 	friend void InnerGlobalFriendFunc(const Inner& inner);
 	// 另一个包含类Inner的类Outer
 	friend class Outer;
@@ -56,7 +56,7 @@ void InnerGlobalFriendFunc(const Inner& inner)
 // 包含其它类Inner的类Outer，且它是其他类Inner的友元
 class Outer
 {
-	// ===== 类Outer中的成员函数 =====
+// ===== 类Outer中的成员函数 =====
 public:
 	// 无参构造函数：
 		// 若类Inner中无需有参构造，且类Outer中也无需有参构造，两个类中都可以不写构造函数，使用编译器提供的默认无参构造函数
@@ -95,7 +95,7 @@ public:
 			<< inner_.inner_private_variable_ << '\n';
 	}
 
-	// ===== 类Outer中的成员变量 =====
+// ===== 类Outer中的成员变量 =====
 private:
 	Inner inner_{};
 	int outer_private_variable_{};
